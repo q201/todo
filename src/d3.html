@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>D3.js Axes Example</title>
+  <!-- Include D3.js library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<!-- SVG container -->
+<svg width="600" height="700"></svg>
+
+<!-- JavaScript using D3.js -->
+<script>
+  // Select the SVG container
+  const svg = d3.select("svg");
+
+  // Set up the scales
+  const xScale = d3.scaleLinear().domain([0, 10]).range([50, 550]); // Example x-scale
+  const yScale = d3.scaleLinear().domain([0, 100]).range([450, 50]); // Example y-scale
+
+  // Create x-axis
+  const xAxis = d3.axisBottom(xScale);
+  svg.append("g").attr("transform", "translate(0, 250)").call(xAxis);
+
+  // Create y-axis
+  const yAxis = d3.axisLeft(yScale);
+  svg.append("g").attr("transform", "translate(50, 0)").call(yAxis);
+</script>
+
+</body>
+</html>
